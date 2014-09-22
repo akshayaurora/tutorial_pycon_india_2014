@@ -1,0 +1,50 @@
+ScreenManager
+    Screen
+        name: 'screen 1'
+        BoxLayout
+            size_hint: None, None
+            size: dp(400), dp(200)
+            padding: dp(20), dp(20)
+            spacing: dp(20)
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            orientation: 'vertical'
+            GridLayout
+                spacing: dp(20) 
+                rows: 2
+                cols: 2
+                Label
+                    text: 'User Name'
+                TextInput
+                    id: ti_user
+                    multiline: False
+                Label
+                    text: 'password'
+                TextInput
+                    id: ti_password
+                    password: True
+                    multiline: False
+            Button
+                text: 'OK'
+                size_hint_y: None
+                height: dp(48)
+                on_release: app.check_user(ti_user.text, ti_password.text)
+    Screen
+        name: 'screen 2'
+        NextButt
+            source: '../1.gif'
+            on_release: root.current = 'screen 3'
+    Screen
+        name: 'screen 3'
+        NextButt
+            source: '../2.gif'
+            on_release: root.current = 'screen 4'
+    Screen
+        name: 'screen 4'
+        NextButt
+            source: '../3.gif'
+            on_release: root.current = 'screen 1'
+
+<NextButt@ButtonBehavior+Image>
+    anim_delay: .1
+    allow_stretch: True
+
