@@ -13,7 +13,4 @@ class Main(App):
     def speak(self):
         tts.speak('Plyer is sexy!')
 
-    def notify(self):
-        notification.notify('Hello World')
-
 Main().run()
