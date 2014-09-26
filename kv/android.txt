@@ -1,0 +1,3 @@
+title=Hello World with kv
+author=Quanon
+orientation=portrait
